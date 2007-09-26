@@ -1,0 +1,11 @@
+Revision history for Perl extension Crypt::Skip32.
+
+0.03  Sun Sep 23 14:19:22 2007
+        - More unit tests, better length checking, cleaned up docs.
+
+0.02  Sun Sep 23 01:08:44 2007
+        - Added actual code, unit tests, documentation, etc.
+
+0.01  Sat Sep 22 13:58:10 2007
+        - original version; created by h2xs 1.23 with options
+          -XA -n Crypt::Skip32

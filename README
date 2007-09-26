@@ -1,0 +1,33 @@
+Crypt-Skip32 version 0.03
+=========================
+
+Skip32 is a 80-bit key, 32-bit block cipher based on Skipjack.  The
+Perl code for the algorithm is a direct translation from C to Perl of
+skip32.c by Greg Rose found here:
+
+  http://www.qualcomm.com.au/PublicationsDocs/skip32.c
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires no other modules and libraries.
+
+COPYRIGHT AND LICENCE
+
+Put the correct copyright and licence information here.
+
+Copyright (C) 2007 by Eric Hammond
+<eric dash cpan at thinksome dot com>
+http://www.anvilon.com/
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.8 or,
+at your option, any later version of Perl 5 you may have available.

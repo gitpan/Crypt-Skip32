@@ -1,0 +1,7 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Crypt-Skip32.t
+lib/Crypt/Skip32.pm
+META.yml                                 Module meta-data (added by MakeMaker)
