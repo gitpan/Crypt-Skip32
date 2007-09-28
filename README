@@ -1,4 +1,4 @@
-Crypt-Skip32 version 0.04
+Crypt-Skip32 version 0.05
 =========================
 
 Crypt::Skip32 is a 80-bit key, 32-bit block cipher based on Skipjack.
@@ -12,7 +12,6 @@ a fairly small cipher block of 32 bits (4 bytes).  This allows
 Crypt::Skip32 to be used to encrypt numeric values with a short
 encrypted text length (useful for encoding ids in URLs and the like).
 
-
 INSTALLATION
 
 To install this module type the following:
@@ -24,18 +23,27 @@ To install this module type the following:
 
 DEPENDENCIES
 
-This module requires no other modules and libraries to run.  The unit
-test does require the following modules:
+This module requires no other modules and libraries to run.
+
+The base unit tests require the following modules:
 
   Test::More
   Test::Exception
+
+If any of the following modules are installed, further unit tests will
+be run:
+
+  Crypt::CBC
+  Test::Pod
+  Test::Pod::Coverage
+  Test::Signature
 
 COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
 Copyright (C) 2007 by Eric Hammond
-<eric dash cpan at thinksome dot com>
+<eric-cpan@thinksome.com>
 http://www.anvilon.com/
 
 This library is free software; you can redistribute it and/or modify

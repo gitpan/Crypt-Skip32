@@ -1,4 +1,4 @@
-use 5.008008;
+use 5.008000;
 use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Crypt::Skip32',
@@ -9,5 +9,6 @@ WriteMakefile(
 			 },
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Crypt/Skip32.pm', # retrieve abstract from module
-       AUTHOR         => 'Eric Hammond <eric dash cpan at thinksome dot com>') : ()),
+       AUTHOR         => 'Eric Hammond <eric-cpan@thinksome.com>') : ()),
+    (MM->can('signature_target') ? (SIGN => 1) : ()),
 );

@@ -1,5 +1,17 @@
 Revision history for Perl extension Crypt::Skip32.
 
+0.05  Wed Sep 26 23:44:21 2007
+	- Added unit test using optional Crypt::CBC (not recommended).
+	- Added unit tests with optional Test::Pod, Test::Pod::Coverage,
+	  Test::Distribution
+	- Added SIGNATURE file with PGP signed SHA1 signatures of files.
+	- Documentation cleanup including bugfix in example code.
+	- Lowering required Perl to 5.8.0 to see if tests pass for a
+	  wider audience.
+	- Changed to my unobfuscated email address in case automated
+	  CPAN tools can use it.  I'll worry about spam on the
+	  receiving end.
+
 0.04  Wed Sep 26 04:46:50 2007
 	- Altered error messages to include package info.
         - Additional documentation, more useful example, doc cleanup.

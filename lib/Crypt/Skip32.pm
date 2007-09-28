@@ -1,6 +1,6 @@
 package Crypt::Skip32;
 
-use 5.008008;
+use 5.008000;
 use strict;
 use warnings;
 
@@ -8,7 +8,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(keysize blocksize new encrypt decrypt);
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # Number of bytes in the 4 byte (32-bit) block.
 sub blocksize {
@@ -25,7 +25,7 @@ sub new {
   my ($class, $key) = @_;
 
   my @key_bytes = unpack('C*', $key);
-  die "key must be 10 bytes long"
+  die __PACKAGE__."::new key must be 10 bytes long"
     unless scalar @key_bytes == 10;
 
   my $self = {
@@ -63,7 +63,7 @@ sub decrypt {
   return $plain_text;
 }
 
-# Remaining Perl code is a direct translation of the Skip32 C implementation
+# Remaining Perl code is a direct translation of the SKIP32 C implementation
 
 my @FTABLE =
 (
@@ -160,7 +160,7 @@ Crypt::Skip32 - 32-bit block cipher based on Skipjack
 
 =head1 DESCRIPTION
 
-Skip32 is a 80-bit key, 32-bit block cipher based on Skipjack.  The
+SKIP32 is a 80-bit key, 32-bit block cipher based on Skipjack.  The
 Perl code for the algorithm is a direct translation from C to Perl of
 skip32.c by Greg Rose found here:
 
@@ -168,17 +168,17 @@ skip32.c by Greg Rose found here:
 
 This cipher can be handy for scrambling small (32-bit) values when you
 would like to obscure them while keeping the encrypted output size
-small (32 bits).
+small (also only 32 bits).
 
-One example where Skip32 has been useful: You have numeric database
-record ids which increment sequentially. You would like to use them in
-URLs, but you don't want to make it obvious how many X's you have in
-the database by putting the ids directly in the URLs.
+One example where Crypt::Skip32 has been useful: You have numeric
+database record ids which increment sequentially. You would like to
+use them in URLs, but you don't want to make it obvious how many X's
+you have in the database by putting the ids directly in the URLs.
 
-You can use Skip32 to scramble ids and put the resulting 32-bit value
-in URLs (perhaps as 8 hex digits or some other shorter encoding).
-When a user requests a URL, you can unscramble the id to retrieve the
-object from the database.
+You can use Crypt::Skip32 to scramble ids and put the resulting 32-bit
+value in URLs (perhaps as 8 hex digits or some other shorter
+encoding).  When a user requests a URL, you can unscramble the id to
+retrieve the object from the database.
 
 Warning: A 32-bit value can only go a little over 4 billion
 (American).  Plan ahead if what you need to encrypt might eventually
@@ -240,28 +240,26 @@ and other places where short encrypted text might be useful.
   use Crypt::Skip32;
 
   # Create a cipher. Change the long hex string to your secret key.
-  my $key        = pack("H20", "112233445566778899AA");
-  my $cipher     = new Crypt::Skip32 $key; # Always 10 bytes!
+  my $key         = pack("H20", "112233445566778899AA");
+  my $cipher      = new Crypt::Skip32 $key; # Always 10 bytes!
 
-  # Encrypt an unsigned integer (under 2^32) into an 8-byte hex string.
-  my $number     = 3493209676;
-  my $plaintext  = pack("N", $number);
-  my $ciphertext = $cipher->encrypt($plaintext); # Always 4 bytes!
-  my $cipherhex  = unpack("H8", $ciphertext);
+  # Encrypt an unsigned integer (under 2^32) into an 8-digit hex string.
+  my $number      = 3493209676;
+  my $plaintext   = pack("N", $number);
+  my $ciphertext  = $cipher->encrypt($plaintext); # Always 4 bytes!
+  my $cipherhex   = unpack("H8", $ciphertext);
   print "$number encrypted and converted to hex: $cipherhex\n";
 
   # Decrypt an encrypted, hexified unsigned integer.
-  my $ciphertext = pack("H8", $cipherhex);
-  my $plaintext2 = $cipher->decrypt($ciphertext);
-  my $number     = unpack("N", $plaintext2);
+  my $ciphertext2 = pack("H8", $cipherhex);
+  my $plaintext2  = $cipher->decrypt($ciphertext); # Always 4 bytes!
+  my $number2     = unpack("N", $plaintext2);
   print "$cipherhex converted back and decrypted: $number\n";
 
 The above code generates the output:
 
   3493209676 encrypted and converted to hex: 6da27100
   6da27100 converted back and decrypted: 3493209676
-  blocksize: 4 bytes 
-  keysize: 10 bytes 
 
 =head1 CAVEATS
 
@@ -297,7 +295,7 @@ code maintained by Julius C. Duque): B<Crypt::Skipjack>
 =head1 AUTHOR
 
 Perl code maintained by Eric Hammond
-E<lt>eric dash cpan at thinksome dot comE<gt>
+E<lt>eric-cpan@thinksome.comE<gt>
 http://www.anvilon.com
 
 Original SKIP32 C code written 1999-04-27 by Greg Rose, based on an

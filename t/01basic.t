@@ -1,8 +1,5 @@
 use strict;
-#
-# Cript-Skip32.t - Unit test for Crypt::Skip32
-#
-
+use warnings;
 use Test::More tests => 42;
 use Test::Exception;
 
@@ -10,8 +7,8 @@ BEGIN { use_ok('Crypt::Skip32') };
 
 # Create cipher
 my $cipher1 = new Crypt::Skip32 pack("H20", "DE2624BD4FFC4BF09DAB");
-ok($cipher1,
-   "create cipher 1");
+isa_ok($cipher1, 'Crypt::Skip32',
+       'new cipher1');
 
 # Standard size methods
 is($cipher1->blocksize, 4,
@@ -38,8 +35,8 @@ test($cipher1, 4294967295,  949651845);
 my $cipher_text_1 = test($cipher1, 123456789, 2982653749);
 
 my $cipher2 = new Crypt::Skip32 pack("H20", "EC1D4396C19C0E0A1CC8");
-ok($cipher2,
-   "create cipher 2");
+isa_ok($cipher2, 'Crypt::Skip32',
+       'new cipher2');
 
 my $cipher_text_2 = test($cipher2, 123456789, 2798020216);
 
@@ -50,7 +47,7 @@ isnt($cipher_text_1, $cipher_text_2,
 dies_ok { my $cipher3 = new Crypt::Skip32 'shortkey'; }
         "new() dies correctly on key too short";
 
-dies_ok { my $cipher3 = new Crypt::Skip32 'keythatistoolong'; }
+dies_ok { my $cipher4 = new Crypt::Skip32 'keythatistoolong'; }
         "new() dies correctly on key too long";
 
 dies_ok { $cipher1->encrypt('abc'); }
