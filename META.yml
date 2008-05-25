@@ -1,11 +1,22 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Crypt-Skip32
-version:      0.06
-version_from: lib/Crypt/Skip32.pm
-installdirs:  site
+---
+name: Crypt-Skip32
+version: 0.07
+author:
+  - 'Eric Hammond <eric-cpan@thinksome.com>'
+abstract: 32-bit block cipher based on Skipjack
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
-    Test::More:                    0.62
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30_01
+  perl: 5.8.0
+build_requires:
+  Test::More: 0.62
+dynamic_config: 0
+provides:
+  Crypt::Skip32:
+    file: lib/Crypt/Skip32.pm
+    version: 0.07
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

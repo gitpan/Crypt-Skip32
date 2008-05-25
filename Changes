@@ -1,5 +1,8 @@
 Revision history for Perl extension Crypt::Skip32.
 
+0.07  ?
+	- Converted from Makefile.PL to Build.PL (Module::Build)
+
 0.06  Sat May 24 18:16:00 PDT 2008
 	- Removed basic unit test dependency on Test::Exception
 	- Added unit test based on the unit test in the original C code.
