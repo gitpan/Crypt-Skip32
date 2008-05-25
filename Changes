@@ -1,5 +1,11 @@
 Revision history for Perl extension Crypt::Skip32.
 
+0.06  Sat May 24 18:16:00 PDT 2008
+	- Removed basic unit test dependency on Test::Exception
+	- Added unit test based on the unit test in the original C code.
+	- Tweak example in documentation.
+        - Specify required version of Crypt::CBC in unit test.
+
 0.05  Wed Sep 26 23:44:21 2007
 	- Added unit test using optional Crypt::CBC (not recommended).
 	- Added unit tests with optional Test::Pod, Test::Pod::Coverage,

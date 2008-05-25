@@ -1,4 +1,4 @@
-Crypt-Skip32 version 0.05
+Crypt-Skip32 version 0.06
 =========================
 
 Crypt::Skip32 is a 80-bit key, 32-bit block cipher based on Skipjack.
@@ -40,9 +40,7 @@ be run:
 
 COPYRIGHT AND LICENCE
 
-Put the correct copyright and licence information here.
-
-Copyright (C) 2007 by Eric Hammond
+Copyright (C) 2007 Eric Hammond
 <eric-cpan@thinksome.com>
 http://www.anvilon.com/
 

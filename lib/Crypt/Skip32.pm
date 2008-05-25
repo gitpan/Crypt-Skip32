@@ -8,7 +8,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(keysize blocksize new encrypt decrypt);
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # Number of bytes in the 4 byte (32-bit) block.
 sub blocksize {
@@ -254,7 +254,7 @@ and other places where short encrypted text might be useful.
   my $ciphertext2 = pack("H8", $cipherhex);
   my $plaintext2  = $cipher->decrypt($ciphertext); # Always 4 bytes!
   my $number2     = unpack("N", $plaintext2);
-  print "$cipherhex converted back and decrypted: $number\n";
+  print "$cipherhex converted back and decrypted: $number2\n";
 
 The above code generates the output:
 
@@ -272,10 +272,9 @@ security.
 Reviewers and testers welcomed.
 
 Though this module has been coded to follow a Crypt::CBC usable
-interface, it has not been tested with Crypt::CBC nor is it intended
-for use in encrypting long chunks of text.  For those purposes, it is
-suggested you use another high quality, proven ciphers with a longer
-block size.
+interface, it is not intended for use in encrypting long chunks of
+text.  For those purposes, it is suggested you use another high
+quality, proven cipher with a longer block size.
 
 =head1 TODO
 
@@ -303,7 +302,7 @@ implementation of the Skipjack algorithm written by Panu Rissanen.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2007 by Eric Hammond
+Copyright (C) 2007 Eric Hammond
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,

@@ -1,7 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 42;
-use Test::Exception;
+use Test::More tests => 45;
 
 BEGIN { use_ok('Crypt::Skip32') };
 
@@ -44,23 +43,30 @@ isnt($cipher_text_1, $cipher_text_2,
      'different keys produce different encrypted text');
 
 # Error conditions
-dies_ok { my $cipher3 = new Crypt::Skip32 'shortkey'; }
-        "new() dies correctly on key too short";
+eval { my $cipher3 = new Crypt::Skip32 'shortkey'; };
+isnt($@, "", "new() dies correctly on key too short");
 
-dies_ok { my $cipher4 = new Crypt::Skip32 'keythatistoolong'; }
-        "new() dies correctly on key too long";
+eval { my $cipher4 = new Crypt::Skip32 'keythatistoolong'; };
+isnt($@, "", "new() dies correctly on key too long");
 
-dies_ok { $cipher1->encrypt('abc'); }
-        "encrypt() dies correctly on plaintext too short";
+eval { $cipher1->encrypt('abc'); };
+isnt($@, "", "encrypt() dies correctly on plaintext too short");
 
-dies_ok { $cipher1->encrypt('abcde'); }
-        "encrypt() dies correctly on plaintext too long";
+eval { $cipher1->encrypt('abcde'); };
+isnt($@, "", "encrypt() dies correctly on plaintext too long");
 
-dies_ok { $cipher1->decrypt('abc'); }
-        "encrypt() dies correctly on ciphertext too short";
+eval { $cipher1->decrypt('abc'); };
+isnt($@, "", "encrypt() dies correctly on ciphertext too short");
 
-dies_ok { $cipher1->decrypt('abcde'); }
-        "decrypt() dies correctly on ciphertext too long";
+eval { $cipher1->decrypt('abcde'); };
+isnt($@, "", "decrypt() dies correctly on ciphertext too long");
+
+# Test based on the tests in the original C source.
+my $cipher5 = new Crypt::Skip32 pack("H20", "00998877665544332211");
+isa_ok($cipher5, 'Crypt::Skip32',
+       'new cipher5');
+
+test($cipher5, 0x33221100, 0x819D5F1F);
 
 exit 0;
 

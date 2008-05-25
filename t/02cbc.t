@@ -12,7 +12,7 @@ use Test::More tests => 2;
 # proven secure Crypt::* ciphers with larger cipher block sizes.
 
 SKIP: {
-  eval "use Crypt::CBC";
+  eval "use Crypt::CBC 2.22";
   skip "Crypt::CBC not installed", 2, if $@;
 
   my $cbc_cipher = Crypt::CBC->new(
