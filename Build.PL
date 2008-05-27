@@ -9,10 +9,14 @@ my $build = Module::Build->new
    dist_author => 'Eric Hammond <eric-cpan@thinksome.com>',
    abstract => '32-bit block cipher based on Skipjack',
    requires => {
-                'perl'          => '5.8.0',
+                'perl'               => '5.8.0',
                },
    build_requires => {
-                'Test::More'    => '0.62',
+                'Test::More'         => '0.62',
+               },
+   recommends => {
+                'Test::Distribution' => 0,
+                'Crypt::CBC'         => '2.22',
                },
    create_readme => 1,
    create_makefile_pl => 'traditional',

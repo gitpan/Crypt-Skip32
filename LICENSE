@@ -1,4 +1,4 @@
-Copyright (C) 2007 Eric Hammond
+Copyright (C) 2007-2008 Eric Hammond
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
@@ -9,4 +9,4 @@ copyright, no rights reserved".  Even so, permission was requested and
 granted to make a Perl version available on the CPAN.
 
 The original SKIP32 implementation in C by Greg Rose:
-http://www.qualcomm.com.au/PublicationsDocs/skip32.c
+  http://www.qualcomm.com.au/PublicationsDocs/skip32.c

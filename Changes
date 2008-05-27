@@ -1,7 +1,13 @@
 Revision history for Perl extension Crypt::Skip32.
 
-0.07  ?
+0.08  Tue May 27 06:37:51 PDT 2008
+	- Apparently cpants.perl.org does not like SIGNATURE in MANIFESTS.
+	- Add "suggests" for optional testing modules.
+
+0.07  Sat May 24 23:33:49 PDT 2008
 	- Converted from Makefile.PL to Build.PL (Module::Build)
+        - Created examples/ subdirectory with one example.
+        - Added LICENSE file.
 
 0.06  Sat May 24 18:16:00 PDT 2008
 	- Removed basic unit test dependency on Test::Exception
