@@ -8,7 +8,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(keysize blocksize new encrypt decrypt);
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 # Number of bytes in the 4 byte (32-bit) block.
 sub blocksize {

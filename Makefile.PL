@@ -5,7 +5,8 @@ WriteMakefile
           'NAME' => 'Crypt::Skip32',
           'VERSION_FROM' => 'lib/Crypt/Skip32.pm',
           'PREREQ_PM' => {
-                           'Test::More' => '0.62'
+                           'Test::More' => '0.62',
+                           'Test::NoWarnings' => '0.084'
                          },
           'INSTALLDIRS' => 'site',
           'EXE_FILES' => [],

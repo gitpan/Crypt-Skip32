@@ -13,6 +13,7 @@ my $build = Module::Build->new
                },
    build_requires => {
                 'Test::More'         => '0.62',
+                'Test::NoWarnings'   => '0.084',
                },
    recommends => {
                 'Test::Distribution' => 0,

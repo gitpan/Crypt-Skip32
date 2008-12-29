@@ -1,6 +1,7 @@
 use strict;
 use warnings;
-use Test::More tests => 2;
+use Test::More tests => 3;
+use Test::NoWarnings;
 
 # NOTE: Just because we are testing that Crypt::Skip32 works with
 # Crypt::CBC does not mean that it is a good idea.  In fact, we
