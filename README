@@ -72,6 +72,15 @@ FUNCTIONS
         Returns the size (in bytes) of the key. This is always 10 bytes (for
         80 bits).
 
+NOTES
+    If Crypt::Skip32::XS is installed, this module will use it and the
+    constructor will return an object of that type, though the interface is
+    identical. You can stick with the pure Perl version by setting the
+    CRYPT_SKIP32_PP environment variable before using this module.
+
+    If reporting a bug, please try to determine (if possible) if it is this
+    module or the XS one, and report it to the corresponding maintainer.
+
 EXAMPLE
     This sample code demonstrates how Crypt::Skip32 can be used to encrypt
     unsigned integers and encode them for use in web URLs, form values, and
@@ -114,11 +123,6 @@ CAVEATS
     interface, it is not intended for use in encrypting long chunks of text.
     For those purposes, it is suggested you use another high quality, proven
     cipher with a longer block size.
-
-TODO
-    This version of Crypt::Skip32 is implemented entirely in Perl. Since
-    there is a free C implementation of the algorithm, this should probably
-    be made available with XS or Inline::C so that it can run a bit faster.
 
 SEE ALSO
     The original SKIP32 implementation in C by Greg Rose:

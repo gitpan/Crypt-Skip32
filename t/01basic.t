@@ -3,7 +3,10 @@ use warnings;
 use Test::More tests => 46;
 use Test::NoWarnings;
 
-BEGIN { use_ok('Crypt::Skip32') };
+BEGIN {
+    $ENV{CRYPT_SKIP32_PP} = 1;
+    use_ok('Crypt::Skip32');
+}
 
 # Create cipher
 my $cipher1 = new Crypt::Skip32 pack("H20", "DE2624BD4FFC4BF09DAB");

@@ -12,6 +12,8 @@ use Test::NoWarnings;
 # to encrypt more than a few bytes of text, consider using one of the
 # proven secure Crypt::* ciphers with larger cipher block sizes.
 
+BEGIN { $ENV{CRYPT_SKIP32_PP} = 1; }
+
 SKIP: {
   eval "use Crypt::CBC 2.22";
   skip "Crypt::CBC not installed", 2, if $@;

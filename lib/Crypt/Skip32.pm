@@ -4,11 +4,13 @@ use 5.008000;
 use strict;
 use warnings;
 
-require Exporter;
-our @ISA = qw(Exporter);
-our @EXPORT_OK = qw(keysize blocksize new encrypt decrypt);
+if (not $ENV{CRYPT_SKIP32_PP} and eval 'use Crypt::Skip32::XS; 1') {
+  eval q(sub Crypt::Skip32 () { 'Crypt::Skip32::XS' });
+} 
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
+
+eval <<'EOP' if not defined &new;
 
 # Number of bytes in the 4 byte (32-bit) block.
 sub blocksize {
@@ -140,6 +142,8 @@ sub _skip32 {
   return @buf;
 }
 
+EOP
+
 1;
 
 __END__
@@ -231,6 +235,16 @@ Returns the size (in bytes) of the key.  This is always 10 bytes (for
 
 =back
 
+=head1 NOTES
+
+If L<Crypt::Skip32::XS> is installed, this module will use it and the
+constructor will return an object of that type, though the interface is
+identical.  You can stick with the pure Perl version by setting the
+CRYPT_SKIP32_PP environment variable before using this module.
+
+If reporting a bug, please try to determine (if possible) if it is this module
+or the XS one, and report it to the corresponding maintainer.
+
 =head1 EXAMPLE
 
 This sample code demonstrates how Crypt::Skip32 can be used to encrypt
@@ -275,13 +289,6 @@ Though this module has been coded to follow a Crypt::CBC usable
 interface, it is not intended for use in encrypting long chunks of
 text.  For those purposes, it is suggested you use another high
 quality, proven cipher with a longer block size.
-
-=head1 TODO
-
-This version of Crypt::Skip32 is implemented entirely in Perl.  Since
-there is a free C implementation of the algorithm, this should
-probably be made available with XS or Inline::C so that it can run a
-bit faster.
 
 =head1 SEE ALSO
 

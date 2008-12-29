@@ -1,5 +1,8 @@
 Revision history for Perl extension Crypt::Skip32.
 
+0.10  Sun Nov 23 09:37:05 UTC 2008
+	- Use Crypt::Skip32::XS if installed (gray <gray@cpan.org>)
+
 0.09  Mon Dec 29 10:52:14 UTC 2008
 	- Add Test::NoWarnings in some unit tests.
 
