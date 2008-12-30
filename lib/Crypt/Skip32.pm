@@ -8,7 +8,7 @@ if (not $ENV{CRYPT_SKIP32_PP} and eval 'use Crypt::Skip32::XS; 1') {
   eval q(sub Crypt::Skip32 () { 'Crypt::Skip32::XS' });
 } 
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 eval <<'EOP' if not defined &new;
 
