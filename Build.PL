@@ -16,6 +16,7 @@ my $build = Module::Build->new
                 'Test::NoWarnings'   => '0.084',
                },
    recommends => {
+                'Crypt::Skip32::XS' => 0,
                 'Test::Distribution' => 0,
                 'Crypt::CBC'         => '2.22',
                },

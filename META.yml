@@ -1,6 +1,6 @@
 ---
 name: Crypt-Skip32
-version: 0.12
+version: 0.13
 author:
   - 'Eric Hammond <eric-cpan@thinksome.com>'
 abstract: 32-bit block cipher based on Skipjack
@@ -14,12 +14,13 @@ build_requires:
   Test::NoWarnings: 0.084
 recommends:
   Crypt::CBC: 2.22
+  Crypt::Skip32::XS: 0
   Test::Distribution: 0
 dynamic_config: 0
 provides:
   Crypt::Skip32:
     file: lib/Crypt/Skip32.pm
-    version: 0.12
+    version: 0.13
 generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
