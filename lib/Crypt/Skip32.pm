@@ -6,9 +6,9 @@ use warnings;
 
 if (not $ENV{CRYPT_SKIP32_PP} and eval 'use Crypt::Skip32::XS; 1') {
   eval q(sub Crypt::Skip32 () { 'Crypt::Skip32::XS' });
-} 
+}
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 eval <<'EOP' if not defined &new;
 
@@ -297,6 +297,8 @@ http://www.qualcomm.com.au/PublicationsDocs/skip32.c
 
 The 80-bit key, 64-bit block Skipjack cipher created by the NSA (Perl
 code maintained by Julius C. Duque): B<Crypt::Skipjack>
+
+B<Crypt::Skip32::XS>
 
 =head1 AUTHOR
 

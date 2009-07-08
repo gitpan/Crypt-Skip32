@@ -1,5 +1,8 @@
 Revision history for Perl extension Crypt::Skip32.
 
+0.12  Tue Jul  7 18:14:32 PDT 2009
+        - Improve CPANTS score by recommending Crypt::Skip32::XS
+
 0.11  Mon Dec 29 17:18:57 PST 2008
         - Get unit test to pass if ::XS is installed
 

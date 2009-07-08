@@ -131,6 +131,8 @@ SEE ALSO
     The 80-bit key, 64-bit block Skipjack cipher created by the NSA (Perl
     code maintained by Julius C. Duque): Crypt::Skipjack
 
+    Crypt::Skip32::XS
+
 AUTHOR
     Perl code maintained by Eric Hammond <eric-cpan@thinksome.com>
     http://www.anvilon.com
