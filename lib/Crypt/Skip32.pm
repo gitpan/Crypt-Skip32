@@ -3,12 +3,13 @@ package Crypt::Skip32;
 use 5.008000;
 use strict;
 use warnings;
+use Carp qw(croak);
 
 if (not $ENV{CRYPT_SKIP32_PP} and eval 'use Crypt::Skip32::XS; 1') {
   eval q(sub Crypt::Skip32 () { 'Crypt::Skip32::XS' });
 }
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 eval <<'EOP' if not defined &new;
 
@@ -27,7 +28,7 @@ sub new {
   my ($class, $key) = @_;
 
   my @key_bytes = unpack('C*', $key);
-  die __PACKAGE__."::new key must be 10 bytes long"
+  croak "key must be 10 bytes long"
     unless scalar @key_bytes == 10;
 
   my $self = {
@@ -44,7 +45,7 @@ sub encrypt {
   my ($self, $plaintext) = @_;
 
   my @input_bytes  = unpack('C*', $plaintext);
-  die __PACKAGE__."::encrypt plaintext must be 4 bytes long"
+  croak "plaintext must be 4 bytes long"
     unless scalar @input_bytes == 4;
   my @output_bytes = _skip32($self->{key_bytes}, \@input_bytes, 1);
   my $cipher_text  = pack('C*', @output_bytes);
@@ -57,7 +58,7 @@ sub decrypt {
   my ($self, $ciphertext) = @_;
 
   my @input_bytes  = unpack('C*', $ciphertext);
-  die __PACKAGE__."::decrypt ciphertext must be 4 bytes long"
+  croak "ciphertext must be 4 bytes long"
     unless scalar @input_bytes == 4;
   my @output_bytes = _skip32($self->{key_bytes}, \@input_bytes, 0);
   my $plain_text   = pack('C*', @output_bytes);
