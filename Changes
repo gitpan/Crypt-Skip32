@@ -1,5 +1,8 @@
 Revision history for Perl extension Crypt::Skip32.
 
+0.15  Fri Jan 29 00:40:34 PST 2010 
+       - Documentation example fix. (Joe Edmonds <joe@elem.com>)
+
 0.14  Tue Jul 14 04:58:01 UTC 2009
         - Croak instead of die. (gray <gray@cpan.org>)
 

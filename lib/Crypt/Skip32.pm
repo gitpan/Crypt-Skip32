@@ -9,7 +9,7 @@ if (not $ENV{CRYPT_SKIP32_PP} and eval 'use Crypt::Skip32::XS; 1') {
   eval q(sub Crypt::Skip32 () { 'Crypt::Skip32::XS' });
 }
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 eval <<'EOP' if not defined &new;
 
@@ -267,7 +267,7 @@ and other places where short encrypted text might be useful.
 
   # Decrypt an encrypted, hexified unsigned integer.
   my $ciphertext2 = pack("H8", $cipherhex);
-  my $plaintext2  = $cipher->decrypt($ciphertext); # Always 4 bytes!
+  my $plaintext2  = $cipher->decrypt($ciphertext2); # Always 4 bytes!
   my $number2     = unpack("N", $plaintext2);
   print "$cipherhex converted back and decrypted: $number2\n";
 
