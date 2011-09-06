@@ -39,7 +39,7 @@
    "provides" : {
       "Crypt::Skip32" : {
          "file" : "lib/Crypt/Skip32.pm",
-         "version" : "0.16"
+         "version" : "0.17"
       }
    },
    "release_status" : "stable",
@@ -48,5 +48,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.16"
+   "version" : "0.17"
 }
