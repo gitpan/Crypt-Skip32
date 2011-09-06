@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.55.
+signed via the Module::Signature module, version 0.66.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -16,13 +16,14 @@ Hash: SHA1
 
 SHA1 c1ec23a965f13b99229ca42d0a7797584fce80e7 Build.PL
 SHA1 0d34f4e0d1ea2176140e362ced805b0756bdb670 Changes
-SHA1 8637f2bd2f7b436b6419fb2327a6e1a169bcd0fb LICENSE
-SHA1 0d73e687bb32ebcf3a50af7d4bb58e53acf05859 MANIFEST
-SHA1 19497fb43f99b9629bb9b818de9edf837bea1a07 META.yml
-SHA1 2c93062b2c47ee5eafe23e9914d8f671909d658b Makefile.PL
-SHA1 7c2e2488f730e99c62a36931ced56609112c3d1c README
+SHA1 d5b62cfeca19f73068aaea50b09067b463f90c2b LICENSE
+SHA1 a8780eb1e6d3839802ea017aed1f29b9e5e69b9e MANIFEST
+SHA1 2313068442d51fbe05200f553ad2cc6d5f7d957f META.json
+SHA1 ea5b3f583cfbc399dfb442e3d2b0cc70f6dcac5b META.yml
+SHA1 0e01d66b6151162b81dfd8fa7ddee4fbbda13028 Makefile.PL
+SHA1 be54ceef14df6b570045117b8c36c69af8a54e1b README
 SHA1 88f7f7ad762e1c7bfe336ecf8fa64254ddb9425b examples/crypt-skip32-sample1
-SHA1 ed60ed7df238f4c6f335ff7516de24f6c0c6ebeb lib/Crypt/Skip32.pm
+SHA1 685714fc8bc26e6aa72cc941d25e63f932e44561 lib/Crypt/Skip32.pm
 SHA1 3882e6de46bd1a7e1443a04b73a457aa5865c9cb t/00distribution.t
 SHA1 df8607252d97a0c2846fbe82e267102ce68df759 t/01basic.t
 SHA1 dc55dc8b33b3aa595c3cfe17d13db7afe418d958 t/02cbc.t
@@ -30,9 +31,9 @@ SHA1 e9c6a5881fc60173fbc8d479c1afd2ce3b43bef1 t/03pod.t
 SHA1 c461940906aaac5d1e9c06e166558d28ebed46bf t/04pod-coverage.t
 SHA1 2e4763a66c0291fcb8c591c592be3f7e130b8789 t/05xs.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.9 (GNU/Linux)
+Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAktiphMACgkQN9qi28wBkF1pFwCfYMMbJV6TcYQmXXTSwOKMxCZq
-I4wAniNfyHFt9YV6cfwGFvXCBz4ysKiR
-=IsE4
+iEYEARECAAYFAk5lcLcACgkQN9qi28wBkF2EtACdFLbFz9wa7CFGRwXQtvDSQqq0
+b30AoK8O6nYUf0vZ+Iw0INAm2wgU0WjT
+=qx6z
 -----END PGP SIGNATURE-----
