@@ -1,10 +1,10 @@
 {
    "abstract" : "32-bit block cipher based on Skipjack",
    "author" : [
-      "Eric Hammond <eric-cpan@thinksome.com>"
+      "Eric Hammond <eric-cpan-2@thinksome.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110930",
+   "generated_by" : "Module::Build version 0.4208",
    "license" : [
       "perl_5"
    ],
@@ -22,14 +22,14 @@
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "Module::Build" : "0.42"
          }
       },
       "runtime" : {
          "recommends" : {
             "Crypt::CBC" : "2.22",
-            "Crypt::Skip32::XS" : 0,
-            "Test::Distribution" : 0
+            "Crypt::Skip32::XS" : "0",
+            "Test::Distribution" : "0"
          },
          "requires" : {
             "perl" : "v5.8.0"
@@ -39,7 +39,7 @@
    "provides" : {
       "Crypt::Skip32" : {
          "file" : "lib/Crypt/Skip32.pm",
-         "version" : "0.17"
+         "version" : "0.18"
       }
    },
    "release_status" : "stable",
@@ -48,5 +48,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.17"
+   "version" : "0.18"
 }
